@@ -1,0 +1,4 @@
+carousel
+========
+
+Carousel Widget
