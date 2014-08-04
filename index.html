@@ -2,20 +2,97 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>HTML5 Video Player | Video JS</title>
+  <title>Carousel | Spidey JS</title>
 
   <!-- REQUIRED -->
-  <!--<link href="assets/css/html5video.css" rel="stylesheet" type="text/css">-->
+ <!-- <link href="assets/css/aCarousel.css" rel="stylesheet" type="text/css">-->
   <script src="assets/js/jquery.min.js"></script>
-  <!--<script src="assets/js/html5video.js"></script>-->
+  <script src="assets/js/aCarousel2.js"></script>
 
-  <!-- OPTIONAL -->
+  <!-- OPTIONAL -->  
+  <link href="assets/demo/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
   <link href="assets/demo/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">  
   <script src="assets/demo/bootstrap/js/bootstrap.min.js"></script>
   <link href="assets/demo/css/navbar-fixed-top.css" rel="stylesheet" type="text/css">
-  <link href="assets/demo/css/site.css" rel="stylesheet" type="text/css">
-  <!--<link href="assets/demo/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">-->
-  <link href="assets/demo/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="assets/demo/css/site.css" rel="stylesheet" type="text/css">  
+  <!--<link href="assets/demo/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">-->  
+
+  <style>
+    .carousel_normal {
+      margin: 10px auto;
+      border: 10px solid #000;
+      position: relative;
+    }
+    .btn-prev {
+      position: absolute;
+      top: 50%;
+      left: -50px;
+    }
+    .btn-next {
+      position: absolute;
+      top: 50%;
+      right: -50px;
+    }
+    /*.prev {
+      position: absolute;
+      top: 50%;
+      left: -50px;
+    }
+    .next {
+      position: absolute;
+      top: 50%;
+      right: -50px;
+    }*/
+    #carousel1 {        
+      height: 130px;
+      width: 700px;
+      margin: 10px auto;
+      border: 10px solid #000;
+      position: relative;
+    }
+    #carousel1 img {
+      border: 1px solid #000;
+      width: 100px;
+      height: 130px;
+    }
+    #carousel2 {
+      width: 200px;
+      height: 250px;
+    }
+    #carousel2 img {
+      border: 0px solid #000;
+      width: 200px;
+      height: 250px;
+    }     
+    #carousel3 {
+      width: 920px;
+      height: 300px;
+    }
+    #carousel3 .cItems {
+      width: 920px;
+      height: 300px;
+    }
+    #carousel3 .cNav_container {
+      position: absolute;
+      bottom: 10px;
+      left: 0px;
+      z-index: 999;
+    }
+    #carousel3 ul.cNav {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    #carousel3 ul.cNav li {
+      display: inline;
+      padding: 10px 60px;
+      background: #eee;
+      border: #000;
+      font-size: 20px;
+      cursor: pointer;
+    }     
+  </style>
+
 
 </head>
 <body>
@@ -48,8 +125,103 @@
 
   <div class="container">
     <div class="jumbotron1 center">
-      <p>Carousel</p>
-      <div id="carousel1" ></div>
+      
+      <h2>View: Normal</h2>
+    
+      <p>
+        <a href="#" id="add_item" >Append Item</a>
+        <input id="add_item_number" type="text" value="0" size="1" />
+
+        <a href="#" id="remove_item" >Remove Item</a>
+        <input id="remove_item_number" type="text" value="0" size="1" />
+
+        <a href="#" id="remove_item_selector" >Remove Item (Selector)</a>
+        <input id="remove_item_selector_id" type="text" value="#remove_me" size="10" />
+
+        <a href="#" id="focus_item" >Focus On</a>
+        <input id="focus_item_number" type="text" value="0" size="1" />
+
+        <a href="#" id="focus_item_selector" >Focus On (Selector)</a>
+        <input id="focus_item_selector_id" type="text" value="#remove_me" size="10" />
+      </p>
+
+      <div id="carousel1" class="carousel_normal" >
+        <!--<a class="prev" href="#">Prev</a>
+        <a class="next" href="#">Next</a>-->
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120525_jmn0110_01_002.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jmn0020-2.jpeg" width="250" height="336" />
+        <img id="remove_me" class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm121002_jmr0147_01_001_1.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120525_jme0127_01_001.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120525_jmr0106_01_001.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120816_jmr0122_01.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120707h_lde3768_001_1.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jmb0063-0024.jpg" width="250" height="336" />
+      </div>
+
+      <p>
+        <a href="#" id="add_item2" >Append Item</a>
+        <input id="add_item_number2" type="text" value="0" size="1" />
+
+        <a href="#" id="remove_item2" >Remove Item</a>
+        <input id="remove_item_number2" type="text" value="0" size="1" />
+
+        <a href="#" id="focus_item2" >Focus On</a>
+        <input id="focus_item_number2" type="text" value="0" size="1" />
+      </p>
+
+      <div id="carousel2" class="carousel_normal" >
+        <a class="prev" href="#">Prev</a>
+        <a class="next" href="#">Next</a>
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120525_jmn0110_01_002.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jmn0020-2.jpeg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm121002_jmr0147_01_001_1.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120525_jme0127_01_001.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120525_jmr0106_01_001.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120816_jmr0122_01.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120707h_lde3768_001_1.jpg" width="250" height="336" />
+        <img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jmb0063-0024.jpg" width="250" height="336" />
+      </div>  
+
+      <div id="carousel3" class="carousel_normal" >
+        <a class="btn-prev" href="#">Prev</a>
+        <a class="btn-next" href="#">Next</a>   
+        <div class="cItems" >
+          <a href="http://start.jewelmint.com/k/fbbib/shop" >
+            <img src="https://dlons895neasy.cloudfront.net/media/catalog/category/cache/1/image/920x270/9df78eab33525d08d6e5fb8d27136e95/JM_FEB_COLLECTIONS_920x270-04.jpeg" />
+          </a>
+        </div>
+        <div class="cItems" >
+          <a href="http://start.jewelmint.com/k/fbbib/shop" >
+            <img src="https://dlons895neasy.cloudfront.net/media/catalog/category/cache/1/image/920x270/9df78eab33525d08d6e5fb8d27136e95/JM_FEB_COLLECTIONS_920x270-01.jpeg" />
+          </a>
+        </div>
+        <div class="cItems" >
+          <a href="http://start.jewelmint.com/k/fbbib/shop" >
+            <img src="https://dlons895neasy.cloudfront.net/media/cms/sites/default/files/130214_JM_Secret48_Hero.jpg" />
+          </a>
+        </div>
+        <div class="cItems" >
+          <a href="http://start.jewelmint.com/k/fbbib/shop" >
+            <img src="https://dlons895neasy.cloudfront.net/media/catalog/category/cache/1/image/920x270/9df78eab33525d08d6e5fb8d27136e95/JM_FEB_COLLECTIONS_920x270-01-SHOP-ALL.jpeg" />
+          </a>
+        </div>
+        <div class="cItems" >
+          <a href="http://start.jewelmint.com/k/fbbib/shop" >
+            <img src="https://dlons895neasy.cloudfront.net/media/catalog/category/cache/1/image/920x270/9df78eab33525d08d6e5fb8d27136e95/JM_FEB_COLLECTIONS_920x270-02-BACK-IN-STOCK_10.33.17_AM.jpeg" />
+          </a>
+        </div>
+        <div class="cNav_container" >
+          <ul class="cNav" >
+            <li class="cButton" x-data="0" >Page 1</li>
+            <li class="cButton" x-data="1" >Page 2</li>
+            <li class="cButton" x-data="2" >Page 3</li>
+            <li class="cButton" x-data="3" >Page 4</li>
+            <li class="cButton" x-data="4" >Page 5</li>
+          </ul>
+        </div>
+      </div>
+
+
       <p>
         <a class="btn btn-lg btn-primary" href="docs/get-started.html" role="button">Get Started</a>
         <a class="btn btn-lg btn-primary" href="examples/" role="button">View Examples</a>
@@ -120,9 +292,178 @@
 </div>
 
   <script type="text/javascript">
-    $(function() {      
+    $(function(){
 
-    });
+        var simple_carousel = new aCarousel($('#carousel1'),{
+          items: '.cItems',
+          margin: 20
+        });
+
+        console.log(simple_carousel);
+        
+        /*$('#carousel1 .prev').bind('click',function(e) {      
+          e.preventDefault();
+          //console.log('prev');
+          simple_carousel.prev(); 
+        });
+        
+        $('#carousel1 .next').bind('click',function(e) {
+          e.preventDefault(); 
+          //console.log('next');          
+          simple_carousel.next(); 
+        });*/
+
+        $('#add_item').bind('click',function(e) {
+          e.preventDefault();
+          var id = parseInt($('#add_item_number').val(),10);  
+          var index = simple_carousel.appendItem($('<img class="cItems" src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120413h_jmb0130_001.jpg" width="250" height="336" />'),id);
+          console.log(index);
+        });
+
+        $('#remove_item').bind('click',function(e) {
+          e.preventDefault(); 
+          var id = parseInt($('#remove_item_number').val(),10);
+          simple_carousel.removeItem(id);
+        });
+
+        $('#remove_item_selector').bind('click',function(e) {
+          e.preventDefault(); 
+          var id = $('#remove_item_selector_id').val();
+          simple_carousel.removeItem(id);
+        });
+
+        $('#focus_item').bind('click',function(e) {
+          e.preventDefault();
+          var id = parseInt($('#focus_item_number').val(),10);  
+          simple_carousel.focusOn(id);
+        });
+
+        $('#focus_item_selector').bind('click',function(e) {
+          e.preventDefault();
+          var id = $('#focus_item_selector_id').val();  
+          simple_carousel.focusOn(id);
+        });
+
+        /*******************************************************************************/
+
+        var simple_carousel2 = new aCarousel($('#carousel2'),{
+          items: '.cItems',
+          margin: 0
+        });
+
+        $('#carousel2 .prev').bind('click',function(e) {      
+          e.preventDefault();
+          simple_carousel2.prev();  
+        });
+        
+        $('#carousel2 .next').bind('click',function(e) {
+          e.preventDefault();           
+          simple_carousel2.next();  
+        });
+
+        $('#add_item2').bind('click',function(e) {
+          e.preventDefault();
+          var id = parseInt($('#add_item_number2').val(),10); 
+          simple_carousel2.appendItem($('<img src="http://dlons895neasy.cloudfront.net/media/catalog/product/cache/1/_/250x336/9df78eab33525d08d6e5fb8d27136e95/j/m/jm120413h_jmb0130_001.jpg" width="250" height="336" />'),id);
+        });
+
+        $('#remove_item2').bind('click',function(e) {
+          e.preventDefault(); 
+          var id = parseInt($('#remove_item_number2').val(),10);
+          simple_carousel2.removeItem(id);
+        });
+
+        $('#focus_item2').bind('click',function(e) {
+          e.preventDefault();
+          var id = parseInt($('#focus_item_number2').val(),10); 
+          simple_carousel2.focusOn(id);
+        });
+
+        /*******************************************************************************/
+
+       var anim_speed = 500;
+
+        var simple_carousel3 = new aCarousel($('#carousel3'),{
+          items: '.cItems',
+          margin: 0,
+          animate: {
+            duration: anim_speed
+          },
+          btns: null,
+        });
+
+        var last_animated = null;
+        var index = 0;
+        var max = 4;
+        var isAnimatingHighLight, isAnimatingUnHighLight;
+        renderButtons(index);
+
+        var animate_next_id = null;
+
+        function renderButtons(id) {
+
+          console.log('renderButtons');
+
+          if (id >= 0 && id <= max) index = id;
+          if (id < 0) index = max;
+          if (id > max) index = 0;
+
+          if (last_animated != null) {
+            unhighLightButton(last_animated);
+          }
+
+          if (!isAnimatingHighLight) {
+            animate_next_id = null;
+            last_animated = $('#carousel3 li').eq(index);
+            simple_carousel3.focusOn(index);
+            highLightButton(last_animated);
+          } else {
+            animate_next_id = index;
+          }
+
+        }
+
+        function highLightButton(button) {
+          isAnimatingHighLight = true;
+          button.css('background','#ff0000');
+          button.animate({
+              'font-size': '30px'
+            },anim_speed, function() {
+              isAnimatingHighLight = false;
+              if (animate_next_id != null) {
+                renderButtons(animate_next_id);
+              }
+            });
+        }
+
+        function unhighLightButton(button) {
+          isAnimatingUnHighLight = true;
+          button.css('background','#eee');              
+            button.animate({
+              'font-size': '20px'
+            },anim_speed, function() {
+              isAnimatingUnHighLight = true;
+            });       
+        }
+
+        $('#carousel3 .btn-prev').bind('click',function(e) {      
+          e.preventDefault();
+          index--;
+          renderButtons(index);
+        });
+        
+        $('#carousel3 .btn-next').bind('click',function(e) {
+          e.preventDefault(); 
+          index++;
+          renderButtons(index);       
+        });     
+
+        $('#carousel3 li').bind('mouseover',function() {
+          var id = parseInt($(this).attr('x-data'),10);
+          renderButtons(id);
+        });
+
+      });
   </script>
 
 </body>

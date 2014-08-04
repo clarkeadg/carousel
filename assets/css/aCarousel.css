@@ -1,0 +1,206 @@
+.cHeader {
+	font-family: 'Lato',sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	font-weight: 400;	
+	text-align: center;
+	background:url(ts-bar-grad.jpg) top center repeat-x #000;
+}
+.cHeader a {
+	display:block;
+	padding: 10px 0;
+	color: #FFF;
+	background:url(ts-arrow-collapsed.jpg) 7px 7px no-repeat;
+}
+.cHeader a:hover{
+	text-decoration:none;
+	background:#333;
+}
+.cItems .prev, .cItems .next {
+	position: absolute;
+	top: 64px;
+	display: block;
+	width: 34px;
+	height: 225px;
+	background:no-repeat center center;
+	cursor: pointer;
+}
+.cItems .prev {
+	left: 10px;
+	background-image: url(ts-arrow-left.png);
+}
+.cItems .next {
+	right: 10px;
+	background-image: url(ts-arrow-right.png);
+}
+.cItems {
+	width: auto;
+}
+.cItem {
+	position: absolute;
+	width: 250px;
+	height: 336px;
+	border: 8px solid #e6a491;
+	background:#FFF;
+}
+.cItem2 {
+	border: 8px solid #f5e0dc;	
+}
+.cItems-inner {
+	display:block;
+	position: relative;
+	padding:20px;
+	background:#F9F9F9;
+	box-shadow:inset #999 0 2px 3px;
+	-moz-box-shadow:inset #999 0 2px 3px;
+	-webkit-box-shadow:inset #999 0 2px 3px;
+}
+.cItems-content-outer{
+	position: relative;
+	margin:0 auto;
+	width:90%;
+	height: 370px;
+	overflow: hidden;	
+}
+.cItems-content {
+	position: absolute;
+	width: 0;
+	height: 150px;
+}
+.cItems-content a {	
+	/*overflow: hidden;*/
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.cItems-content a {	
+	text-decoration: none;
+}
+.cItems-content a img {
+	width: 100%;
+	height: 100%;
+}
+.cItemInfo {
+	position: absolute;
+	bottom: 0;
+	right: 0px;
+	z-index: 1;
+	width: 100%;
+}
+.cItemRank {
+	font-size: 30px;
+	margin: 5px;
+	color: #e6a491;
+	position: absolute;
+	bottom: 0;
+	right: 0px;
+}
+.cItemRank2 {
+	color: #f5e0dc;
+	font-size: 18px;
+}
+.cItemName {
+	text-transform: uppercase;
+	font-size: 11px;
+	color: #000;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+.cItemName2 {
+	color: #f5e0dc;
+	font-size: 0;
+}
+.cItemButton {
+	background: url(magnify-tiny-grey.jpg) no-repeat scroll 0 0 transparent;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;   
+    z-index: 150;
+}
+.cItemButton2 {
+	background: none;
+}
+.thump_down_div {
+	float: left;
+}
+.stardiv {
+	float: left;
+}
+.thump_up_div {
+	float: left;
+}
+.aStarRater {
+	/*width: 250px;
+	height: 50px;*/
+}
+.aCarousel_noResults {
+	width: 500px;
+}
+
+#carousel_news {
+	width: 900px;
+	height: 500px;
+}
+
+#carousel_news .cItem {
+	position: absolute;
+	width: 760px;
+	height: 450px;
+	border: 0;	
+}
+#NewItems_Container {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+#NewItems_Container .NewItems_Item a {
+	width: 150px;
+	height: 200px;
+	float: left;
+	border: 1px solid #FFF;
+}
+#NewItems_Container .NewItems_Item a:hover {
+	border: 1px solid #000;
+}
+#NewItems_Container .NewItems_Browse {
+	position: absolute;
+	top: 230px;
+	right: 10px;
+}
+#NewItems_Container .NewItems_Browse a {
+	padding: 5px 20px;
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;	
+}
+
+.cNav {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 900;
+}
+.nItem {
+	float: left;
+	margin: 5px;
+}
+.nItem a {
+	border-top: 4px solid #000;
+	background: #FFF;
+	color: #000;
+	font-weight:bold;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	display: block;
+	text-decoration: none;
+	letter-spacing: 3px;
+}
+.nItem a:hover {
+	background: #FFFF66;
+}
